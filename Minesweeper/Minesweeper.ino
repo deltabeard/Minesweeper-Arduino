@@ -32,8 +32,10 @@ byte buttons[] = {up_button, down_button, left_button, right_button, start_butto
 
 int coordinates[12][6];    // Multidimensional array, This function has a huge lack of documentation.
      // Also, I can't put 'int coordinates[gridSizeX][gridSizeY];' without error :(
-int gridSizeY = 7;         // Grid size - 1
-int gridSizeX = 13;
+int gridSizeY = 5;         // Grid size - 1
+int gridSizeX = 11;
+byte arrayY = 0;
+byte arrayX = 0;
 byte xDraw = 0;
 byte yDraw = 0;
 byte x = 0;
@@ -111,8 +113,8 @@ void loop() {
   if (btnPress = true) { 
     coordinates[x][y] = 1;
 
-    for (byte arrayY = 0; arrayY < gridSizeY; arrayY++) {
-      for (byte arrayX = 0; arrayX < gridSizeX; arrayX++) {
+    for (arrayY = 0; arrayY < gridSizeY + 1; arrayY++) {
+      for (arrayX = 0; arrayX < gridSizeX + 1; arrayX++) {
         xDraw = arrayX * 6;
         yDraw = arrayY * 6;
         if (coordinates[arrayX][arrayY] == 1) {
